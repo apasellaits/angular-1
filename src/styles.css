@@ -1,7 +1,9 @@
 /* Global Styles */
 
 
-
+input.ng-invalid {
+  background-color: red;
+}
 
 
 .verde {
