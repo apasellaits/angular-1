@@ -1,36 +1,39 @@
 import { Component, OnInit } from '@angular/core';
 
+interface Cliente {
+  nome: string,
+  cognome: string,
+  altezza?: number,
+  email: string,
+  sesso: 'M' | 'F' | '',
+  dataNascita: any
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
-  datiAnagrafici = true;
-  nome = '';
-  altro = '';
-  percorsoStudi = false;
-  esperienzeLavorative = false;
+  jsonIn: Cliente = {
+    nome: '',
+    cognome: '',
+    email: '',
+    sesso: '',
+    dataNascita: '',
+  };
 
   constructor() {}
 
   ngOnInit(): void {
-   
   }
 
-  // toggleSezione(nomeSezione: string) {
-  //   this.datiAnagrafici = false;
-  //   this.percorsoStudi = false;
-  //   this.esperienzeLavorative = false;
+  onDataNascitaChange($event: any) {
+    console.log($event.target.value);
+  }
 
-  //   if(nomeSezione === 'datiAnagrafici') {
-  //     this.datiAnagrafici = true;
-  //   } else  if(nomeSezione === 'percorsoStudi') {
-  //     this.percorsoStudi = true;
-  //   } else if(nomeSezione === 'esperienzaLavorative') {
-  //     this.esperienzeLavorative = true;
-  //   }
-  // }
-
+  save() {
+    // passo il jsonIn al backend
+  }
 }
 
 

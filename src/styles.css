@@ -1,8 +1,8 @@
 /* Global Styles */
 
 
-input.ng-invalid {
-  background-color: red;
+input.ng-invalid, select.ng-invalid {
+  border-color: red;
 }
 
 
