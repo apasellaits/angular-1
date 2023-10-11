@@ -13,10 +13,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
-    RouterModule.forRoot([
-      { path: '', component: ProductListComponent },
-      { path: 'product/detail', component: ProductDetailComponent },
-    ])
+   
   ],
   declarations: [
     AppComponent,
