@@ -1,44 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-
-interface Cliente {
-  nome: string,
-  cognome: string,
-  altezza?: number,
-  email: string,
-  sesso: 'M' | 'F' | '',
-  dataNascita: any
-}
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
-  jsonIn: Cliente = {
-    nome: '',
-    cognome: '',
-    email: '',
-    sesso: '',
-    dataNascita: '',
-  };
+  drinks: any = [];
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
+    this.http.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a')
+      .subscribe( (response: any) => {
+        console.log(response);
+        this.drinks = response.drinks;
+      });
   }
 
-  onDataNascitaChange($event: any) {
-    console.log($event.target.value);
+  delete(pippo: number) {
+    this.http.delete('http://www.pippo.it/fattura?id=' + pippo)
+    .subscribe( response => {
+      // ....
+    });
   }
 
-  save() {
-    // passo il jsonIn al backend
-  }
 }
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/
