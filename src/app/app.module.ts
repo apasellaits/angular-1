@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app.routing.module';
 import { ApiService } from './_services/api.service';
+import { DrinkService } from './_services/drink.service';
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import { ApiService } from './_services/api.service';
   ],
   providers: [
     ApiService,
+    DrinkService
   ],
   bootstrap: [
     AppComponent
