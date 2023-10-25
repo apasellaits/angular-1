@@ -8,11 +8,13 @@ import { Observable } from 'rxjs';
  providedIn: 'root',
 })
 export class ApiService {
+    baseUrl = 'https://www.thecocktaildb.com/api/json/v1/1/';
     constructor(private http: HttpClient) {}
 
+    /***
+     * RICERCA
+     */
     searchByF(firstLetter: string) {
-        return this.http.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=' 
-                        + firstLetter);
-
+        return this.http.get(this.baseUrl + 'search.php?f=' + firstLetter);
     }
 }

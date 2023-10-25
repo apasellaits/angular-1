@@ -6,7 +6,6 @@ import { ApiService } from './_services/api.service';
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
-  drinks: Drink[] = [];
   
   constructor(private apiService: ApiService
               ) {}
