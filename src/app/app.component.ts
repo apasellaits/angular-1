@@ -1,24 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiService } from './_services/api.service';
-import { DrinkService } from './_services/drink.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-  drinks: any = []
-  constructor(private apiService: ApiService,
-              private drinkService: DrinkService,
-              ) {}
+export class AppComponent {
+  title = 'titolo';
+  visibile = false;
 
-  ngOnInit(): void {
-    this.drinkService
-            .getElencoDrinks('b')
-            .subscribe( (response: any) => {
-              this.drinks = response.drinks;
-            })
+  mostra() {
+    this.visibile = true;
   }
-
-
 }
