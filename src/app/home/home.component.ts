@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../_services/api.service';
-import { HttpClient } from '@angular/common/http';
 import Drink from '../_models/drink.model';
 
 @Component({
@@ -12,9 +11,12 @@ export class HomeComponent implements OnInit {
 
   constructor(private api: ApiService) {}
 
-  ngOnInit(): void {
-    this.api.getElencoDrinks('a').subscribe( (drinks) => {
-      this.drinks = drinks;
+  ngOnInit(): void {}
+
+  ricerca() {
+    this.api.getElencoDrinks('a').subscribe( (response: any) => {
+      this.drinks = response.drinks;
+      // this.drinks = drinks;
     })
   }
 }
