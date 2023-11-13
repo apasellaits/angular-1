@@ -11,7 +11,9 @@ export class HomeComponent implements OnInit {
 
   constructor(private api: ApiService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.ricerca()
+  }
 
   ricerca() {
     this.api.getElencoDrinks('a').subscribe( (response: any) => {

@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { DettaglioComponent } from './dettaglio/dettaglio.component';
 import { HomeComponent } from './home/home.component';
 import { ApiService } from './_services/api.service';
+import { DrinkCardComponent } from './drink-card/drink-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    DettaglioComponent
+    DettaglioComponent,
+    DrinkCardComponent,
   ],
   imports: [
     BrowserModule,
