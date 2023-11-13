@@ -15,3 +15,9 @@ DETTAGLIO
             >torna alla home</a>
     </div>
 </div>
+
+<app-drink-card *ngFor="let suggerito of drinkSuggeriti"
+            [dimensione]="'small'"
+            [drink]="suggerito">
+
+</app-drink-card>

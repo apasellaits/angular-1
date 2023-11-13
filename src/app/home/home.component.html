@@ -4,20 +4,16 @@
 
 <button (click)="ricerca()">RICERCA</button>
 
-<div class="col-4">
-  <app-drink-card 
-      *ngFor="let riga of drinks">
-  </app-drink-card>
-</div>
-
 <app-drink-card 
     class="col-4"
-    *ngFor="let riga of drinks">
-</app-drink-card>
+    *ngFor="let riga of drinks"
+    [drink]="riga"
+    (onDelete)="cancellaDrink($event)"
+    >
+  </app-drink-card>
+  <!--  -->
 
 
-
-<!-- [drink]="riga" -->
 
 <table>
   <tr *ngFor="let drink of drinks">

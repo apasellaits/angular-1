@@ -1,1 +1,18 @@
+
 DRINK CARD
+<h1 
+  [class.evidenziato]="dimensione === 'extra'"
+  [routerLink]="['/dettaglio/' + drink.idDrink]"
+  >
+  {{ drink.strDrink }}
+</h1>
+
+<button (click)="elimina()">ELIMINA</button>
+
+<p *ngIf="dimensione !== 'small'">porhporig sioj goipfg
+  og ksdfjsoifjsdoifj sdoifj sidojf dioj fiodjf isod
+  og ksdfjsoifjsdoifj sdoifj sidojf dioj fiodjf isod
+  og ksdfjsoifjsdoifj sdoifj sidojf dioj fiodjf isod
+  og ksdfjsoifjsdoifj sdoifj sidojf dioj fiodjf isod
+  og ksdfjsoifjsdoifj sdoifj sidojf dioj fiodjf isod
+</p>

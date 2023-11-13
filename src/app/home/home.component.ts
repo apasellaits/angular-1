@@ -21,4 +21,8 @@ export class HomeComponent implements OnInit {
       // this.drinks = drinks;
     })
   }
+
+  cancellaDrink(drink: Drink){
+    console.log('voreei cancellare', drink);
+  }
 }
